@@ -34,6 +34,40 @@ h3{
   color: #462d6f;
 }
 
+
+/***loader***/
+.lds-container{
+  display: flex;
+  color: #462d6f;
+  line-height: 36px;
+  justify-content: center;
+  margin:36px;
+}
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 4px solid #462d6f;
+  border-color: #462d6f transparent #462d6f transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 1200px) {
   .content {   grid-template-columns: 1fr}
   .main aside {  height: 200px;}

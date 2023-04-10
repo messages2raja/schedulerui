@@ -31,20 +31,33 @@ function App() {
 
   return (
     <div>
+       
       <header className="App-header">Logo</header>
-      <div className="main">
+     <div className="main">
       <h3>Schedules</h3>
         <div className="content">
          <aside>
-            <Schedules
+         {
+              setScheduleList && setScheduleList.length?(
+                <Schedules
               scheduleList={scheduleList}
               setScheduleList={setScheduleList}
               setCurrentScheduleId={setCurrentScheduleId}
               currentScheduleId={currentScheduleId}
             />
-          </aside>
+              ):(
+                <div className="lds-container">LOADING<span class="lds-dual-ring"></span></div>
+              )
+            } </aside>
           <section>
-            <ScheduleTable tabledata={currentScheduleLog} />
+            {
+              currentScheduleLog && currentScheduleLog.length?(
+                <ScheduleTable tabledata={currentScheduleLog} />
+              ):(
+                <div className="lds-container">LOADING<span class="lds-dual-ring"></span></div>
+              )
+            }
+           
           </section>
         </div>
       </div>

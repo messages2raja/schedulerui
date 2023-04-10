@@ -19,7 +19,7 @@ export default function Schedules({ setScheduleList,scheduleList, setCurrentSche
   return (
     <>
     <ul className="scheduleTile">
-      {scheduleList.map((schedule,index) => (
+      {scheduleList && scheduleList.length?(      scheduleList.map((schedule,index) => (
         <li
           key={index}
           onClick={() => scheduleClickHandler(schedule.id)}
@@ -35,7 +35,10 @@ export default function Schedules({ setScheduleList,scheduleList, setCurrentSche
             <button onClick={(e)=>retireHandler(e,schedule)} className="unretire">UnRetire</button>
           )}
         </li>
-      ))}
+      ))):(
+<p>Loading...</p>
+      )}
+
       </ul>
     </>
   );
